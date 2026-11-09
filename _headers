@@ -1,0 +1,18 @@
+# Security settings for Netlify. This file must sit next to index.html.
+#
+# Content-Security-Policy: the browser may load only files from this site itself.
+# 'unsafe-inline' is kept because the page's code and styles live inside index.html;
+# there is no form or user text on the site, so nothing can be slipped in that way.
+# If you ever add an outside service (analytics, a booking widget, a map, embedded video),
+# its address has to be added here, or the browser will block it.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

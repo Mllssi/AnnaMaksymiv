@@ -7,10 +7,9 @@
 <meta name="description" content="Family, couple and brand photographer in Northampton, UK">
 <meta name="theme-color" content="#FBF7F4">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23C4161C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Italiana is the Canva-like display face (Latin only); Forum takes over for Cyrillic in the same spots -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Forum&family=Italiana&family=Manrope:wght@400;500;600&family=Marck+Script&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<!-- Fonts live on the site itself, so visitors' browsers never contact Google.
+     Italiana is the Canva-like display face (Latin only); Forum takes over for Cyrillic in the same spots -->
+<link href="fonts/fonts.css" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-bw.jpg">
 <script>
   // Before paint: marks JS on, and plays the signature intro once per visit
@@ -478,31 +477,21 @@
   .contact-in { row-gap: 48px; }
   .contact-side { grid-column: 1 / -1; }
   .contact-side p + p { margin-top: 16px; }
-  .form { grid-column: 1 / -1; display: grid; gap: 32px; }
-  .two { display: grid; gap: 32px; }
-  .field { display: grid; gap: 6px; border: 0; }
-  .field label, .field legend { font-size: 14px; font-weight: 500; color: var(--mut); }
-  .field legend { margin-bottom: 12px; }
-  .field input, .field textarea { font: inherit; color: var(--fg); background: transparent; border: 0; border-bottom: 1px solid var(--ln); border-radius: 0; padding: 8px 0 14px; width: 100%; transition: border-color .3s; }
-  .field input:focus, .field textarea:focus { outline: none; border-color: var(--fg); }
-  .field textarea { resize: vertical; min-height: 96px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chips label { position: relative; }
-  .chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-  .chips span { display: inline-block; padding: 10px 18px; border: 1px solid var(--ln); border-radius: 999px; font-size: 15px; font-weight: 500; color: var(--fg); transition: background .3s, color .3s, border-color .3s; }
-  .chips label:hover span { border-color: var(--mut); }
-  .chips input:checked + span { background: var(--fg); color: var(--bg); border-color: var(--fg); }
-  .chips input:focus-visible + span { outline: 2px solid var(--fg); outline-offset: 3px; }
-  .form .btn { justify-self: start; }
-  .form-ok { display: none; font-family: var(--serif); font-size: 40px; line-height: 1.15; }
-  .form.sent > *:not(.form-ok) { display: none; }
-  .form.sent .form-ok { display: block; }
-  @media (prefers-reduced-motion: no-preference) { .form.sent .form-ok { animation: fadeUp .8s var(--ease); } }
+  /* Contact: big editorial rows instead of a form, so the site itself collects nothing */
+  .reach { grid-column: 1 / -1; list-style: none; }
+  .reach li { border-top: 1px solid var(--ln); }
+  .reach li:last-child { border-bottom: 1px solid var(--ln); }
+  .reach a { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 0; }
+  .reach-name { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 64px); line-height: 1; letter-spacing: -.02em; transition: color .3s; }
+  .reach-at { display: block; margin-top: 8px; font-family: var(--text); font-size: 14px; letter-spacing: 0; color: var(--mut); }
+  .reach-go { flex: none; width: 52px; height: 52px; border: 1px solid var(--ln); border-radius: 50%; display: grid; place-items: center; font-size: 20px; transition: background .3s, border-color .3s, color .3s, transform .4s var(--ease); }
+  .reach a:hover .reach-name { color: #FF8A80; }
+  .reach a:hover .reach-go, .reach li.main .reach-go { background: var(--red); border-color: var(--red); color: #FFF; }
+  .reach a:hover .reach-go { transform: rotate(-45deg); }
   @media (min-width: 900px) {
     .contact-title { margin-bottom: 96px; }
     .contact-side { grid-column: 1 / span 4; }
-    .form { grid-column: 6 / span 7; }
-    .two { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .reach { grid-column: 6 / span 7; }
   }
 
   /* Footer */
@@ -511,28 +500,32 @@
   .footer .big { font-family: var(--sign); line-height: 1; color: #F7EEEA; font-size: 14vw; white-space: nowrap; text-align: center; padding: 48px 0 0; }
   .footer-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 24px; }
   .footer a:hover { color: #F7EEEA; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
   @media (min-width: 900px) { .footer { padding-bottom: 40px; } .footer .big { font-size: min(12vw, 220px); } }
 
   .sticky { position: fixed; left: var(--gutter); right: var(--gutter); bottom: 16px; z-index: 30; box-shadow: 0 12px 30px -10px rgba(120, 10, 14, .55); transition: opacity .3s, transform .3s var(--ease); }
   .sticky.off { opacity: 0; transform: translateY(16px); pointer-events: none; }
   @media (min-width: 900px) { .sticky { display: none; } }
+
+  /* Privacy: a small window over the page instead of a separate page */
+  .pv-open { font-size: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .pv-open:hover { color: #F7EEEA; }
+  .pv { width: min(640px, calc(100% - 2 * var(--gutter))); max-height: min(86dvh, 820px); margin: auto; padding: 0; border: 0; border-radius: 8px; background: #FBF7F4; color: #241516; box-shadow: 0 40px 80px -30px rgba(22, 8, 9, .6); overscroll-behavior: contain; }
+  .pv::backdrop { background: rgba(22, 8, 9, .72); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+  .pv-in { padding: 36px 28px 32px; }
+  .pv-close { position: sticky; top: 0; float: right; margin: 12px 12px 0 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #E2D3CC; background: #FBF7F4; font-size: 20px; line-height: 1; display: grid; place-items: center; z-index: 1; transition: background .2s, color .2s, border-color .2s; }
+  .pv-close:hover { background: var(--red); border-color: var(--red); color: #FFF; }
+  .pv h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(38px, 6vw, 56px); line-height: 1; letter-spacing: -.03em; margin-bottom: 8px; }
+  .pv .date { font-size: 13px; color: #6E5A57; }
+  .pv h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; margin: 24px 0 6px; padding-top: 20px; border-top: 1px solid #E2D3CC; }
+  .pv p { font-size: 15px; line-height: 1.65; }
+  .pv h2 + p { margin-top: 20px; }
+  .pv p + p { margin-top: 14px; }
+  .pv a { text-decoration: underline; text-underline-offset: 3px; }
+  html[lang="uk"] .pv .en, html:not([lang="uk"]) .pv .uk { display: none; }
+  @media (min-width: 900px) { .pv-in { padding: 48px 48px 40px; } }
+  @media (prefers-reduced-motion: no-preference) { .pv[open] { animation: fadeUp .45s var(--ease); } }
 </style>
-<!-- BEGIN PLERDY CODE -->
-<script data-plerdy_code='1'>
-(function(w,d){
-  if(w.__plerdyCode)return;
-  w.__plerdyCode=1;
-  w._protocol=w.location.protocol=="https:"?"https://":"http://";
-  w._site_hash_code="7ab9a8801f90da3357bb17303f3c7a14";
-  w._suid=83034;
-  var s=d.createElement("script");
-  s.async=true;
-  s.referrerPolicy="strict-origin-when-cross-origin";
-  s.src="https://a.plerdy.com/public/js/click/main.js?v="+Math.random();
-  d.head.appendChild(s);
-})(window,document);
-</script>
-<!-- END PLERDY CODE -->
 </head>
 <body data-theme="light">
 
@@ -851,7 +844,7 @@
           <details><summary data-i18n="faq.q1">What should we wear?</summary><p data-i18n="faq.a1">Calm colours that go together, without big logos. After booking I send you a short guide with outfit ideas</p></details>
           <details><summary data-i18n="faq.q2">What if it rains?</summary><p data-i18n="faq.a2">We move the shoot to another day for free, or find a cosy place indoors</p></details>
           <details><summary data-i18n="faq.q3">My kids won't sit still. Is that a problem?</summary><p data-i18n="faq.a3">Not at all. They don't have to. I work with games and movement, and the most honest photos come from that</p></details>
-          <details><summary data-i18n="faq.q4">How do I book a date?</summary><p data-i18n="faq.a4">Send a message through the form or Instagram. A deposit holds the date, the rest you pay on the day of the shoot</p></details>
+          <details><summary data-i18n="faq.q4">How do I book a date?</summary><p data-i18n="faq.a4">Message me on Telegram, Instagram or Facebook, and we'll find a date that works for you</p></details>
           <details><summary data-i18n="faq.q5">Can I order a photobook?</summary><p data-i18n="faq.a5">Yes. I design a photobook with your photos and order the print, so you can keep it or gift it</p></details>
         </div>
       </div>
@@ -864,30 +857,14 @@
       <h2 class="contact-title" data-i18n="contact.title" data-reveal="up">Let's talk</h2>
       <div class="contact-in grid12">
         <div class="contact-side" data-reveal="fade">
-          <p data-i18n="contact.text">Tell me a little about you and the shoot you have in mind. I reply within a day</p>
-          <p class="muted" data-i18n="contact.dm">Prefer Instagram? <a class="link" href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Send me a DM</a></p>
+          <p data-i18n="contact.text">Message me wherever it's easier for you. Tell me a little about you and the shoot you have in mind, and I'll reply within a day</p>
         </div>
-        <form class="form" name="contact" method="POST" data-netlify="true" data-reveal="fade" style="--d:.1s">
-          <input type="hidden" name="form-name" value="contact">
-          <fieldset class="field">
-            <legend data-i18n="f.type">Type of shoot</legend>
-            <div class="chips">
-              <label><input type="radio" name="type" value="Family" checked><span data-i18n="f.t1">Family</span></label>
-              <label><input type="radio" name="type" value="Couple"><span data-i18n="f.t2">Couple</span></label>
-              <label><input type="radio" name="type" value="Portrait"><span data-i18n="f.t3">Portrait</span></label>
-              <label><input type="radio" name="type" value="Wedding or christening"><span data-i18n="f.t4">Wedding or christening</span></label>
-              <label><input type="radio" name="type" value="Business"><span data-i18n="f.t5">Business</span></label>
-            </div>
-          </fieldset>
-          <div class="two">
-            <div class="field"><label for="f-name" data-i18n="f.name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-            <div class="field"><label for="f-email" data-i18n="f.email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-          </div>
-          <div class="field"><label for="f-date" data-i18n="f.date">Preferred date</label><input id="f-date" name="date" type="date"></div>
-          <div class="field"><label for="f-msg" data-i18n="f.msg">A few words about the shoot</label><textarea id="f-msg" name="message"></textarea></div>
-          <button type="submit" class="btn btn-primary" data-i18n="f.send">Send my request</button>
-          <p class="form-ok" role="status" data-i18n="f.ok">Thank you! I will reply within a day</p>
-        </form>
+        <!-- WhatsApp: copy a row, set href to https://wa.me/<number without + or spaces> and the name to WhatsApp -->
+        <ul class="reach" data-reveal="fade" style="--d:.1s">
+          <li class="main"><a href="https://t.me/free_pomidor" target="_blank" rel="noopener"><span class="reach-name">Telegram<span class="reach-at">@free_pomidor</span></span><span class="reach-go" aria-hidden="true">→</span></a></li>
+          <li><a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener"><span class="reach-name">Instagram<span class="reach-at">@anna_maksymiv_ph</span></span><span class="reach-go" aria-hidden="true">→</span></a></li>
+          <li><a href="https://www.facebook.com/share/1JMZ4nXWEv/" target="_blank" rel="noopener"><span class="reach-name">Facebook<span class="reach-at">Anna Maksymiv</span></span><span class="reach-go" aria-hidden="true">→</span></a></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -899,10 +876,38 @@
     <div class="footer-in">
       <span>© 2026 Anna Maksymiv Photography</span>
       <span>Northampton, UK</span>
-      <a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Instagram</a>
+      <button type="button" class="pv-open" aria-haspopup="dialog" data-i18n="foot.privacy">Privacy</button>
+      <span class="footer-links"><a href="https://t.me/free_pomidor" target="_blank" rel="noopener">Telegram</a><a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/share/1JMZ4nXWEv/" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </div>
 </footer>
+
+<!-- Privacy notice. Both languages live here; the one shown follows the site language -->
+<dialog class="pv" aria-labelledby="pv-title">
+  <button type="button" class="pv-close" aria-label="Close">×</button>
+  <div class="pv-in">
+    <div class="en" lang="en">
+      <h2 id="pv-title">Privacy</h2>
+      <p>My name is Anna Maksymiv. I'm a photographer based in Northampton, UK. You can reach me on <a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Instagram</a> or <a href="https://t.me/free_pomidor" target="_blank" rel="noopener">Telegram</a></p>
+      <p>When you contact me about a shoot, I may receive your name, contact details and the information needed to organise it. I use this only to talk with you, plan your shoot and send you your finished photos</p>
+      <p>This website has no ad trackers and no tools that analyse how visitors behave. The technical services that keep the site running may still process standard information about visits</p>
+      <p>I respect your privacy. I share photos from shoots in my portfolio or on social media only with your consent. If you'd like any published photos taken down, just message me and we'll sort it out</p>
+      <h3>If you have questions</h3>
+      <p>You can always ask me which of your data I keep, and ask me to correct or delete it</p>
+      <p>Just message me on <a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Instagram</a> or <a href="https://t.me/free_pomidor" target="_blank" rel="noopener">Telegram</a></p>
+    </div>
+    <div class="uk" lang="uk">
+      <h2>Конфіденційність</h2>
+      <p>Мене звати Анна Максимів. Я фотографиня, працюю в Нортгемптоні, Велика Британія. Зі мною можна зв'язатися через <a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Instagram</a> або <a href="https://t.me/free_pomidor" target="_blank" rel="noopener">Telegram</a></p>
+      <p>Коли ви звертаєтеся до мене щодо фотосесії, я можу отримати ваше ім'я, контактні дані та інформацію, необхідну для організації зйомки. Ці дані потрібні лише для нашого спілкування, планування фотосесії та передачі готових фотографій</p>
+      <p>На сайті немає рекламних трекерів чи інструментів для аналізу поведінки відвідувачів. Водночас технічні сервіси, які забезпечують роботу сайту, можуть обробляти стандартну інформацію про відвідування</p>
+      <p>Я поважаю вашу приватність. Фотографії зі зйомок публікую у своєму портфоліо або соціальних мережах лише за вашою згодою. Якщо ви захочете прибрати опубліковані фотографії, просто напишіть мені, і ми це вирішимо</p>
+      <h3>Якщо у вас є запитання</h3>
+      <p>Ви завжди можете звернутися до мене, щоб дізнатися, які ваші дані я зберігаю, попросити їх виправити або видалити</p>
+      <p>Для цього достатньо написати мені в <a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Instagram</a> або <a href="https://t.me/free_pomidor" target="_blank" rel="noopener">Telegram</a></p>
+    </div>
+  </div>
+</dialog>
 
 <a href="#contact" class="btn btn-primary sticky off" data-i18n="cta.dates">Check my dates</a>
 
@@ -969,14 +974,11 @@ const UK = {
   "faq.q1": "Що вдягнути?", "faq.a1": "Спокійні кольори, які пасують між собою, без великих логотипів. Після бронювання я надішлю коротку інструкцію з ідеями",
   "faq.q2": "А якщо піде дощ?", "faq.a2": "Безкоштовно перенесемо зйомку на інший день або знайдемо затишне місце в приміщенні",
   "faq.q3": "Мої діти не всидять на місці. Це проблема?", "faq.a3": "Зовсім ні, їм і не треба. Я працюю через ігри та рух, і саме так виходять найщиріші фото",
-  "faq.q4": "Як забронювати дату?", "faq.a4": "Напишіть через форму або в Instagram. Передоплата закріплює дату, решту ви сплачуєте в день зйомки",
+  "faq.q4": "Як забронювати дату?", "faq.a4": "Напишіть мені в Telegram, Instagram чи Facebook, і ми разом підберемо зручну дату",
   "faq.q5": "Можна замовити фотокнигу?", "faq.a5": "Так. Я роблю дизайн фотокниги з вашими фото й замовляю друк, щоб ви могли зберегти її або подарувати",
   "contact.title": "Поговорімо",
-  "contact.text": "Розкажіть трохи про себе і зйомку, яку уявляєте. Я відповідаю протягом дня",
-  "contact.dm": "Зручніше в Instagram? <a class=\"link\" href=\"https://www.instagram.com/anna_maksymiv_ph/\" target=\"_blank\" rel=\"noopener\">Напишіть мені в директ</a>",
-  "f.name": "Ваше ім'я", "f.email": "Email", "f.type": "Тип зйомки", "f.date": "Бажана дата", "f.msg": "Кілька слів про зйомку", "f.send": "Надіслати запит",
-  "f.t1": "Сімейна", "f.t2": "Парна", "f.t3": "Портрет", "f.t4": "Весілля або хрестини", "f.t5": "Для бізнесу",
-  "f.ok": "Дякую! Я відповім протягом дня"
+  "foot.privacy": "Конфіденційність",
+  "contact.text": "Напишіть мені туди, де вам зручніше. Розкажіть трохи про себе і зйомку, яку уявляєте, і я відповім протягом дня"
 };
 
 const root = document.documentElement;
@@ -1200,14 +1202,15 @@ function showPlans(which) {
 }
 document.querySelectorAll(".switch button").forEach(b => b.addEventListener("click", () => showPlans(b.dataset.plans)));
 
-// Form: sends to Netlify Forms when hosted there, shows a thank-you line instead of leaving the page
-const form = document.querySelector(".form");
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() })
-    .catch(() => {})
-    .finally(() => form.classList.add("sent"));
+// Privacy window: opens from the footer, closes on ×, Esc or a click outside
+const pv = document.querySelector(".pv");
+document.querySelector(".pv-open").addEventListener("click", () => { pv.showModal(); pv.scrollTop = 0; document.body.style.overflow = "hidden"; });
+pv.querySelector(".pv-close").addEventListener("click", () => pv.close());
+pv.addEventListener("click", e => {
+  const r = pv.getBoundingClientRect();
+  if (e.target === pv && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) pv.close();
 });
+pv.addEventListener("close", () => { document.body.style.overflow = ""; });
 
 // Sticky CTA on phones: hidden while the hero or the contact block is on screen
 const sticky = document.querySelector(".sticky");
