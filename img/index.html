@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anna Maksymiv Photography</title>
+<meta name="description" content="Family, couple and brand photographer in Northampton, UK">
+<meta name="theme-color" content="#FBF7F4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23C4161C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Italiana is the Canva-like display face (Latin only); Forum takes over for Cyrillic in the same spots -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Forum&family=Italiana&family=Manrope:wght@400;500;600&family=Marck+Script&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-bw.jpg">
+<script>
+  // Before paint: marks JS on, and plays the signature intro once per visit
+  (function () {
+    var d = document.documentElement;
+    d.classList.add("js");
+    try {
+      var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce && !sessionStorage.getItem("intro")) { d.classList.add("intro"); sessionStorage.setItem("intro", "1"); }
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    --red: #C4161C;
+    --red-dark: #9E1015;
+    --wine: #2E1113;
+    --ink: #241516;
+    --display: "Italiana", "Forum", "Cormorant", Georgia, serif;
+    --serif: "Cormorant", Georgia, serif;
+    --text: "Manrope", system-ui, sans-serif;
+    --sign: "Mrs Saint Delafield", "Marck Script", "Segoe Script", cursive;
+    --gutter: 20px;
+    --gap: 12px;
+    --section: 104px;
+    --header: 64px;
+    --ease: cubic-bezier(.2, .7, .1, 1);
+    --ease-io: cubic-bezier(.7, 0, .2, 1);
+  }
+  @media (min-width: 900px) {
+    :root { --gutter: 48px; --gap: 20px; --section: 160px; --header: 76px; }
+  }
+
+  /* Themes. The page background melts from one to the next as you scroll */
+  [data-theme="light"] { --bg: #FBF7F4; --fg: #241516; --mut: #6E5A57; --ln: #E2D3CC; }
+  [data-theme="blush"] { --bg: #EEDDD5; --fg: #241516; --mut: #6A5652; --ln: #D3BCB2; }
+  [data-theme="red"]   { --bg: #C4161C; --fg: #FFF7F3; --mut: #F8D3CF; --ln: rgba(255, 247, 243, .35); }
+  [data-theme="dark"], [data-theme="work"] { --bg: #2E1113; --fg: #F7EEEA; --mut: #C4ABA5; --ln: #5A3436; }
+  body[data-theme="work"][data-tint="couple"]   { --bg: #3A2428; }
+  body[data-theme="work"][data-tint="portrait"] { --bg: #2C2916; }
+  body[data-theme="work"][data-tint="brand"]    { --bg: #461B0E; }
+  body[data-theme="work"][data-tint="food"]     { --bg: #33200E; }
+  html.js main > section[data-theme] { --bg: inherit; --fg: inherit; --mut: inherit; --ln: inherit; background: transparent; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--text); font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    transition: background-color .9s var(--ease), color .6s var(--ease);
+  }
+  @media (min-width: 900px) { body { font-size: 17px; } }
+  body::after {
+    content: ""; position: fixed; inset: 0; z-index: 95; pointer-events: none; opacity: .06; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  section[id] { scroll-margin-top: var(--header); }
+  main > section { background: var(--bg); color: var(--fg); position: relative; }
+
+  .container { width: 100%; max-width: 1680px; margin: 0 auto; padding: 0 var(--gutter); }
+  .grid12 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); }
+  @media (min-width: 900px) { .grid12 { grid-template-columns: repeat(12, 1fr); } }
+  .section { padding: var(--section) 0; }
+
+  .muted { color: var(--mut); }
+  .h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(52px, 8vw, 140px); line-height: .9; letter-spacing: -.035em; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 14px 30px; border-radius: 999px;
+    font-size: 15px; font-weight: 600; line-height: 1.2;
+    position: relative; overflow: hidden; isolation: isolate;
+    transition: color .35s var(--ease), border-color .35s;
+  }
+  .btn::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; transform: translateY(101%); transition: transform .45s var(--ease); }
+  .btn:hover::before { transform: none; }
+  .btn-primary { background: var(--red); color: #FFF; }
+  .btn-primary::before { background: var(--red-dark); }
+  .btn-ghost { border: 1px solid currentColor; }
+  .btn-ghost::before { background: var(--fg); }
+  .btn-ghost:hover { color: var(--bg); border-color: var(--fg); }
+  .link { display: inline-block; font-size: 15px; font-weight: 600; padding: 4px 0; background: linear-gradient(currentColor, currentColor) left bottom / 100% 1px no-repeat; transition: background-size .4s var(--ease); }
+  .link:hover { background-size: 35% 1px; }
+
+  .ph { position: relative; overflow: hidden; background: #D9C3B8; }
+  .ph img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Reveal on scroll. The clip goes on the children: a fully clipped element never counts as on screen */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js [data-reveal="clip"] > * { clip-path: inset(100% 0 0 0); transition: clip-path 1.2s var(--ease) var(--d, 0s); }
+    html.js [data-reveal="clip"].in > * { clip-path: inset(0 0 0 0); }
+    html.js [data-reveal="up"] { opacity: 0; transform: translateY(.35em); clip-path: inset(0 0 30% 0); transition: opacity .9s var(--ease) var(--d, 0s), transform 1s var(--ease) var(--d, 0s), clip-path 1s var(--ease) var(--d, 0s); }
+    html.js [data-reveal="up"].in { opacity: 1; transform: none; clip-path: inset(-20% -5% -30% -5%); }
+    html.js [data-reveal="fade"] { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease) var(--d, 0s), transform .9s var(--ease) var(--d, 0s); }
+    html.js [data-reveal="fade"].in { opacity: 1; transform: none; }
+  }
+
+  /* Intro: her signature writes itself on red, then the curtain lifts */
+  .intro { display: none; }
+  html.intro .intro {
+    display: grid; place-items: center; position: fixed; inset: 0; z-index: 100;
+    background: var(--red); color: #FFF; cursor: pointer;
+    animation: curtain 1s var(--ease-io) 1.75s forwards;
+  }
+  .intro-sign { font-family: var(--sign); font-size: clamp(64px, 13vw, 200px); line-height: 1; padding: 0 .2em; animation: write 1.4s var(--ease) .25s both; }
+  @keyframes curtain { to { clip-path: inset(0 0 100% 0); } }
+  @keyframes write { from { clip-path: inset(-30% 100% -30% 0); } to { clip-path: inset(-30% -5% -30% 0); } }
+
+  /* Header */
+  .header {
+    position: sticky; top: 0; z-index: 40; height: var(--header);
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    transition: transform .5s var(--ease), background-color .9s var(--ease);
+  }
+  .header.hide { transform: translateY(-100%); }
+  .header-in { display: flex; align-items: center; justify-content: space-between; height: 100%; gap: 24px; }
+  .logo { font-family: var(--sign); font-size: 28px; line-height: 1; white-space: nowrap; padding-top: 6px; }
+  .nav { display: none; gap: 36px; font-size: 15px; font-weight: 500; }
+  .nav a { position: relative; }
+  .nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease); }
+  .nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+  .header-right { display: flex; align-items: center; gap: 14px; }
+  .lang { display: flex; border: 1px solid var(--ln); border-radius: 999px; padding: 3px; }
+  .lang button { font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--mut); padding: 5px 10px; border-radius: 999px; transition: background .3s, color .3s; }
+  .lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  .header .btn { display: none; min-height: 44px; padding: 10px 22px; font-size: 14px; }
+  body[data-theme="red"] .header .btn-primary, body[data-theme="red"] .sticky { background: #FFF7F3; color: var(--red); }
+  .menu-btn { font-size: 15px; font-weight: 600; padding: 8px 0; }
+  @media (min-width: 900px) { .logo { font-size: 34px; } .header-right { gap: 20px; } }
+  @media (min-width: 1100px) { .nav, .header .btn { display: flex; } .menu-btn { display: none; } }
+
+  .menu {
+    position: fixed; inset: var(--header) 0 0 0; z-index: 39; background: var(--bg);
+    padding: 40px var(--gutter) 32px; display: flex; flex-direction: column; justify-content: space-between;
+    clip-path: inset(0 0 100% 0); visibility: hidden; transition: clip-path .6s var(--ease-io), visibility .6s;
+  }
+  .menu.open { clip-path: inset(0 0 0 0); visibility: visible; }
+  .menu nav { display: flex; flex-direction: column; gap: 4px; }
+  .menu nav a { font-family: var(--serif); font-weight: 300; font-size: 52px; line-height: 1.1; letter-spacing: -.02em; opacity: 0; transform: translateY(20px); transition: opacity .5s, transform .6s var(--ease); }
+  .menu.open nav a { opacity: 1; transform: none; }
+  .menu.open nav a:nth-child(2) { transition-delay: .05s; } .menu.open nav a:nth-child(3) { transition-delay: .1s; } .menu.open nav a:nth-child(4) { transition-delay: .15s; } .menu.open nav a:nth-child(5) { transition-delay: .2s; }
+  .menu .btn { align-self: stretch; }
+  @media (min-width: 1100px) { .menu { display: none; } }
+
+  /* Hero, as in her Canva: a black-and-white portrait with PHOTO / GRAPHY laid across it */
+  .hero { padding: 16px 0 24px; overflow-x: clip; }
+  .hero-art {
+    --H: 96vw;
+    position: relative; height: var(--H);
+    font-family: var(--display); font-weight: 400; text-transform: uppercase;
+    font-size: 19vw; line-height: .8; letter-spacing: -.01em;
+  }
+  .hero-fig { position: absolute; z-index: 1; left: 50%; top: 0; height: 100%; aspect-ratio: 2 / 3; transform: translateX(-50%); }
+  .hero-fig .ph { display: block; width: 100%; height: 100%; background: #CFCAC7; }
+  .hero-fig img { filter: grayscale(1) contrast(1.04); }
+  .hero-art .wrap { position: absolute; left: 0; right: 0; z-index: 2; }
+  .hero-art .wrap1 { top: 18%; }
+  .hero-art .wrap2 { top: 52%; }
+  .hero-art .w { display: block; text-align: center; white-space: nowrap; }
+  @media (min-width: 700px) { .hero-art { --H: min(110vw, 760px); font-size: calc(var(--H) * .27); } }
+  @media (min-width: 900px) {
+    .hero { padding: 24px 0 40px; }
+    .hero-art { --H: max(520px, min(calc(100vh - var(--header) - 72px), 860px)); font-size: calc(var(--H) * .27); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-fig .ph { animation: rise 1.3s var(--ease) both .15s; }
+    .hero-fig img { animation: settle 2s var(--ease) both .15s; }
+    .hero-art .w1 { animation: slideL 1.3s var(--ease) both .35s; }
+    .hero-art .w2 { animation: slideR 1.3s var(--ease) both .45s; }
+    html.intro .hero-fig .ph, html.intro .hero-fig img { animation-delay: 2.15s; }
+    html.intro .hero-art .w1 { animation-delay: 2.35s; }
+    html.intro .hero-art .w2 { animation-delay: 2.45s; }
+  }
+  @keyframes rise { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+  @keyframes settle { from { transform: scale(1.14); } }
+  @keyframes slideL { from { transform: translateX(-8%); opacity: 0; } }
+  @keyframes slideR { from { transform: translateX(8%); opacity: 0; } }
+  @keyframes fadeUp { from { transform: translateY(20px); opacity: 0; } }
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
+      .hero-art .wrap1 { animation: drift1 linear both; animation-timeline: scroll(); animation-range: 0 90vh; }
+      .hero-art .wrap2 { animation: drift2 linear both; animation-timeline: scroll(); animation-range: 0 90vh; }
+      @keyframes drift1 { to { transform: translateX(-12%); } }
+      @keyframes drift2 { to { transform: translateX(12%); } }
+    }
+  }
+
+  /* Section head */
+  .sec-head { margin-bottom: 56px; align-items: end; row-gap: 20px; }
+  .sec-head .h2 { grid-column: 1 / -1; }
+  .sec-head .side { grid-column: 1 / -1; max-width: 38ch; }
+  @media (min-width: 900px) {
+    .sec-head { margin-bottom: 88px; }
+    .sec-head .h2 { grid-column: 1 / span 8; }
+    .sec-head .side { grid-column: 9 / span 4; justify-self: end; }
+  }
+
+  /* About, right after the hero: short and plain, her name in her red signature */
+  .about { padding: var(--section) 0 72px; }
+  .about-text { grid-column: 1 / -1; max-width: 760px; }
+  .about-text .h2 { margin-bottom: 36px; }
+  .about-text .name { font-family: var(--sign); font-weight: 400; font-size: 1.15em; letter-spacing: 0; color: var(--red); padding: 0 .1em; display: inline-block; transform: rotate(-4deg) translateY(.06em); }
+  body[data-theme="red"] .about-text .name { color: var(--fg); }
+  .about-text p { max-width: 58ch; font-size: 18px; }
+  .about-text p + p { margin-top: 16px; }
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .about-text .name { clip-path: inset(-40% 100% -40% 0); transition: clip-path 1.4s var(--ease) .5s; }
+    html.js .about-text .in .name, html.js .about-text .h2.in .name { clip-path: inset(-40% -20% -40% 0); }
+  }
+  @media (min-width: 900px) { .about-text { grid-column: 3 / span 8; } .about-text p { font-size: 19px; } }
+
+  /* Tagline after About: "Photographer for families / couples / brands", the last word turns like a slot reel with a matching photo */
+  .tag { padding: 0 0 var(--section); }
+  .tag-in { row-gap: 40px; align-items: center; }
+  .tag-line { grid-column: 1 / -1; font-family: var(--serif); font-weight: 300; font-size: clamp(48px, 7.4vw, 132px); line-height: 1; letter-spacing: -.035em; }
+  .tag-line > span { display: block; }
+  .reel { display: inline-grid; overflow: hidden; vertical-align: bottom; padding: 0 .06em .12em; margin-bottom: -.12em; }
+  .reel > span { grid-area: 1 / 1; font-style: italic; color: var(--red); transform: translateY(140%); transition: transform .8s var(--ease); }
+  .reel > span.on { transform: none; }
+  .reel > span.out { transform: translateY(-140%); }
+  .tag-ph { grid-column: 2 / -1; position: relative; aspect-ratio: 4 / 5; max-width: 340px; justify-self: end; width: 100%; transform: rotate(3deg); }
+  .tag-ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 6px solid #FFF; box-shadow: 0 24px 50px -24px rgba(46, 17, 19, .45); opacity: 0; transform: scale(.94) rotate(-4deg); transition: opacity .7s var(--ease), transform .9s var(--ease); }
+  .tag-ph img.on { opacity: 1; transform: none; }
+  .tag-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px; padding-top: 28px; border-top: 1px solid var(--ln); }
+  .tag-foot p { max-width: 40ch; color: var(--mut); }
+  .tag-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (min-width: 900px) {
+    .tag-line { grid-column: 1 / span 9; }
+    .tag-ph { grid-column: 10 / span 3; }
+  }
+
+  /* Red band: big words like in her Canva, and a stack of prints you can flip through */
+  .band { padding: var(--section) 0; overflow: clip; }
+  .band-in { row-gap: 56px; align-items: center; }
+  .band-copy { grid-column: 1 / -1; }
+  .band-title { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(56px, 9vw, 168px); line-height: .9; letter-spacing: -.01em; margin-bottom: 36px; }
+  .band-copy p { max-width: 34ch; font-size: 18px; }
+  .stack-wrap { grid-column: 1 / -1; display: grid; justify-items: center; gap: 56px; padding: 24px 0; }
+  .stack { position: relative; width: min(72%, 400px); aspect-ratio: 4 / 5; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .stack img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    box-shadow: 0 24px 50px -18px rgba(50, 0, 0, .6);
+    border: 6px solid #FFF7F3;
+    transition: transform .9s var(--ease), filter .6s;
+  }
+  .stack img[data-pos="0"] { z-index: 3; transform: rotate(-2deg); }
+  .stack img[data-pos="1"] { z-index: 2; transform: translate(-18%, 5%) rotate(-10deg); filter: brightness(.85); }
+  .stack img[data-pos="2"] { z-index: 1; transform: translate(17%, -4%) rotate(8deg); filter: brightness(.75); }
+  .stack:hover img[data-pos="1"] { transform: translate(-26%, 7%) rotate(-14deg); }
+  .stack:hover img[data-pos="2"] { transform: translate(25%, -6%) rotate(12deg); }
+  .stack img.toss { z-index: 4; transform: translate(70%, -10%) rotate(18deg) !important; }
+  .stack-hint { font-size: 14px; color: var(--mut); }
+  @media (min-width: 900px) {
+    .band-copy { grid-column: 1 / span 6; }
+    .stack-wrap { grid-column: 8 / span 5; }
+  }
+
+  /* Services: two clear groups, photo cards */
+  .svc-group + .svc-group { margin-top: 72px; }
+  .svc-label { display: flex; align-items: center; gap: 16px; font-size: 15px; font-weight: 600; margin-bottom: 24px; }
+  .svc-label::after { content: ""; flex: 1; height: 1px; background: var(--ln); }
+  .cards { display: grid; grid-template-columns: 1fr; gap: 32px var(--gap); }
+  .card { display: block; }
+  .card .ph { display: block; aspect-ratio: 4 / 5; margin-bottom: 18px; }
+  .card > span:last-child { display: block; }
+  .cards.biz .card .ph { aspect-ratio: 3 / 2; }
+  .card .ph img { transition: transform 1.2s var(--ease); }
+  .card:hover .ph img { transform: scale(1.05); }
+  .card-t { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 2.6vw, 40px); line-height: 1.05; letter-spacing: -.02em; margin-bottom: 8px; transition: color .3s; }
+  .card:hover .card-t { color: var(--red); }
+  .card-n { display: block; font-size: 15px; color: var(--mut); max-width: 36ch; }
+  .card-go { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 600; padding-bottom: 2px; border-bottom: 1px solid currentColor; }
+  @media (min-width: 700px) { .cards { grid-template-columns: repeat(3, 1fr); } .cards.biz { grid-template-columns: repeat(2, 1fr); } }
+
+  /* Portfolio */
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+  .tabs button { font-size: 14px; font-weight: 500; color: var(--mut); padding: 8px 16px; border: 1px solid var(--ln); border-radius: 999px; transition: background .3s, color .3s, border-color .3s; }
+  .tabs button:hover { color: var(--fg); border-color: var(--mut); }
+  .tabs button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .tabs sup { font-size: 10px; margin-left: 4px; opacity: .7; }
+  .gallery-wrap { container-type: inline-size; }
+  .gallery { display: grid; gap: var(--gap); grid-auto-flow: dense; grid-template-columns: repeat(2, 1fr); grid-auto-rows: calc((100cqw - var(--gap)) / 2 * 1.25); }
+  .tile { position: relative; overflow: hidden; background: rgba(255, 255, 255, .04); cursor: zoom-in; text-align: left; }
+  .tile .zoom { display: block; width: 100%; height: 100%; transition: transform 1.1s var(--ease), opacity .45s; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile:hover .zoom { transform: scale(1.04); }
+  .gallery:has(.tile:hover) .tile:not(:hover) .zoom { opacity: .6; }
+  .tile .cap {
+    position: absolute; left: 12px; bottom: 12px; z-index: 1;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px 6px 10px; border-radius: 999px;
+    background: rgba(255, 247, 243, .92); color: var(--ink); font-size: 13px; font-weight: 600;
+    opacity: 0; transform: translateY(8px); transition: opacity .35s, transform .45s var(--ease);
+  }
+  .tile .cap::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+  .tile:hover .cap, .tile:focus-visible .cap { opacity: 1; transform: none; }
+  .gallery .wide { grid-column: span 2; }
+  .gallery .hide { display: none; }
+  @media (min-width: 900px) {
+    .gallery { grid-template-columns: repeat(12, 1fr); grid-auto-rows: calc(((100cqw - 11 * var(--gap)) / 12 * 4 + 3 * var(--gap)) * 1.25); }
+    .gallery .tile { grid-column: span 4; }
+    .gallery .wide { grid-column: span 8; }
+  }
+  .work-more { display: flex; flex-wrap: wrap; gap: 12px 16px; margin-top: 40px; }
+  .work-more .btn[hidden] { display: none; }
+  .btn .count { opacity: .6; font-weight: 500; }
+  ::view-transition-group(*) { animation-duration: .6s; animation-timing-function: cubic-bezier(.2, .7, .1, 1); }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; }
+
+  /* Lightbox: the photo grows out of its tile */
+  .lb { position: fixed; inset: 0; z-index: 80; display: grid; grid-template-rows: 1fr auto; background: rgba(22, 8, 9, .97); color: #F7EEEA; view-transition-name: lb-bg; }
+  .lb[hidden] { display: none; }
+  .lb-stage { position: relative; display: grid; place-items: center; padding: 64px var(--gutter) 8px; min-height: 0; }
+  .lb-stage img { width: auto; height: auto; max-width: 100%; max-height: calc(100dvh - 160px); object-fit: contain; }
+  .lb-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px var(--gutter) 24px; font-size: 14px; color: #C4ABA5; }
+  .lb-nav { display: flex; gap: 8px; }
+  .lb button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #5A3436; font-size: 20px; line-height: 1; display: grid; place-items: center; transition: background .2s, border-color .2s; }
+  .lb button:hover { background: #3D1A1C; border-color: #C4ABA5; }
+  .lb-close { position: absolute; top: 12px; right: var(--gutter); z-index: 2; }
+  @media (prefers-reduced-motion: no-preference) {
+    .lb.fade { animation: lbFade .35s var(--ease); }
+    .lb-stage img.swap { animation: lbSwap .5s var(--ease); }
+  }
+  @keyframes lbFade { from { opacity: 0; } }
+  @keyframes lbSwap { from { opacity: 0; transform: translateX(var(--dir, 24px)); } }
+
+  /* Before / after with a few examples */
+  .edit { row-gap: 40px; align-items: start; }
+  .edit-text { grid-column: 1 / -1; }
+  .edit-text .h2 { font-size: clamp(48px, 6vw, 104px); margin-bottom: 28px; }
+  .edit-list { list-style: none; margin-top: 32px; }
+  .edit-list li { display: flex; gap: 12px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--ln); font-size: 15px; }
+  .edit-list li::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--red); transform: translateY(-2px); }
+  .edit-view { grid-column: 1 / -1; }
+  .ba { position: relative; aspect-ratio: 3 / 2; overflow: hidden; --p: 50%; user-select: none; background: #D9C3B8; }
+  .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; transition: opacity .3s; }
+  /* PLACEHOLDER: "before" is the same photo with a flat filter. Swap in Anna's real RAW files and delete this filter */
+  .ba .before { filter: saturate(.35) contrast(.74) brightness(1.12) sepia(.15) hue-rotate(-10deg); clip-path: inset(0 calc(100% - var(--p)) 0 0); }
+  .ba.swapping img { opacity: 0; }
+  .ba-line { position: absolute; top: 0; bottom: 0; left: var(--p); width: 1px; background: rgba(255, 255, 255, .9); pointer-events: none; }
+  .ba-knob {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    display: flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 999px;
+    background: #FFF; color: var(--ink); font-size: 12px; font-weight: 600; line-height: 1; white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .2);
+  }
+  .ba-knob i { font-style: normal; font-size: 14px; opacity: .55; }
+  .ba-tag { position: absolute; top: 14px; padding: 5px 11px; border-radius: 999px; background: rgba(36, 21, 22, .55); color: #FFF; font-size: 12px; font-weight: 600; pointer-events: none; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .ba-tag.l { left: 14px; } .ba-tag.r { right: 14px; }
+  .ba input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .ba:has(input:focus-visible) { outline: 2px solid var(--fg); outline-offset: 4px; }
+  .ba-thumbs { display: flex; gap: 10px; margin-top: 14px; }
+  .ba-thumbs button { width: 76px; aspect-ratio: 3 / 2; overflow: hidden; opacity: .5; outline-offset: 2px; transition: opacity .3s; }
+  .ba-thumbs button img { width: 100%; height: 100%; object-fit: cover; }
+  .ba-thumbs button:hover { opacity: .85; }
+  .ba-thumbs button[aria-pressed="true"] { opacity: 1; outline: 2px solid var(--red); }
+  @media (min-width: 900px) { .edit-text { grid-column: 1 / span 4; padding-top: 12px; } .edit-view { grid-column: 6 / span 7; } }
+
+  /* Prices */
+  .switch { display: inline-flex; border: 1px solid var(--fg); border-radius: 999px; padding: 4px; margin-bottom: 40px; }
+  .switch button { padding: 10px 22px; border-radius: 999px; font-size: 14px; font-weight: 600; transition: background .3s, color .3s; }
+  .switch button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  .plans[hidden] { display: none; }
+  .plans { row-gap: 20px; align-items: stretch; }
+  @media (prefers-reduced-motion: no-preference) {
+    .plans:not([hidden]) .plan { animation: fadeUp .7s var(--ease) both; }
+    .plans .plan:nth-child(2) { animation-delay: .08s; } .plans .plan:nth-child(3) { animation-delay: .16s; }
+  }
+  .plan {
+    --fg: #241516; --bg: #F3E7E1; --mut: #6E5A57; --ln: #DCC8C0;
+    position: relative; grid-column: 1 / -1; display: flex; flex-direction: column;
+    background: var(--bg); color: var(--fg); border-radius: 8px; overflow: hidden;
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+  }
+  .plan:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(46, 17, 19, .35); }
+  .plan-ph { aspect-ratio: 16 / 9; overflow: hidden; }
+  .plan-ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+  .plan:hover .plan-ph img { transform: scale(1.05); }
+  .plan-body { display: flex; flex-direction: column; flex: 1; padding: 28px; }
+  .plan-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .plan h3 { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1; letter-spacing: -.02em; }
+  .plan .price { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1; letter-spacing: -.02em; white-space: nowrap; }
+  .plan .price small { font-family: var(--text); font-size: 13px; font-weight: 500; letter-spacing: 0; color: var(--mut); margin-right: 6px; }
+  .plan .sub { margin-top: 8px; font-size: 15px; color: var(--mut); }
+  .plan ul { list-style: none; margin: 24px 0 32px; flex: 1; }
+  .plan li { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--ln); font-size: 15px; }
+  .plan li::before { content: ""; flex: none; width: 12px; height: 7px; border-left: 2px solid var(--red); border-bottom: 2px solid var(--red); transform: rotate(-45deg) translateY(-3px); }
+  .plan .btn { align-self: stretch; }
+  .plan.featured { --fg: #F7EEEA; --bg: #2E1113; --mut: #C4ABA5; --ln: #5A3436; }
+  .plan.featured li::before { border-color: #FF8A80; }
+  .badge { position: absolute; top: 14px; left: 14px; z-index: 1; padding: 6px 12px; border-radius: 999px; background: var(--red); color: #FFF; font-size: 12px; font-weight: 600; }
+  @media (min-width: 900px) {
+    .plan { grid-column: span 4; }
+    .plan.featured { margin-top: -20px; margin-bottom: 20px; }
+  }
+
+  /* Reviews: the messages clients sent her, as message bubbles */
+  .chat { row-gap: 36px; }
+  .msg { grid-column: 1 / -1; max-width: 560px; }
+  .bubble {
+    position: relative; padding: 24px 26px 22px;
+    background: #FFF; color: var(--ink);
+    border-radius: 26px 26px 26px 6px;
+    box-shadow: 0 18px 40px -24px rgba(46, 17, 19, .35);
+    font-size: 17px; line-height: 1.6;
+  }
+  .bubble::after { content: "\2764"; position: absolute; right: 18px; bottom: -14px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #FFF; color: var(--red); font-size: 14px; box-shadow: 0 4px 12px rgba(46, 17, 19, .15); }
+  .msg figcaption { display: flex; align-items: center; gap: 10px; margin: 16px 0 0 6px; font-size: 14px; color: var(--mut); }
+  .msg figcaption::before { content: ""; width: 26px; height: 26px; border-radius: 50%; background: var(--fg); opacity: .12; }
+  .chat-more { grid-column: 1 / -1; margin-top: 12px; }
+  @media (min-width: 900px) {
+    .chat { row-gap: 0; }
+    .msg:nth-child(1) { grid-column: 1 / span 6; grid-row: 1; }
+    .msg:nth-child(2) { grid-column: 7 / span 6; grid-row: 1; margin-top: 120px; }
+    .msg:nth-child(3) { grid-column: 2 / span 5; grid-row: 2; margin-top: 48px; }
+    .chat-more { grid-column: 9 / span 4; grid-row: 2; align-self: end; margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .msg[data-reveal] { opacity: 0; transform: translateY(30px) scale(.94); transform-origin: left bottom; transition: opacity .7s var(--ease) var(--d, 0s), transform .9s var(--ease) var(--d, 0s); }
+    html.js .msg[data-reveal].in { opacity: 1; transform: none; }
+  }
+
+  /* FAQ */
+  .faq-wrap { row-gap: 32px; }
+  .faq-title { grid-column: 1 / -1; }
+  .faq { grid-column: 1 / -1; }
+  @media (min-width: 900px) { .faq-title { grid-column: 1 / span 5; font-size: clamp(56px, 6vw, 112px); } .faq { grid-column: 6 / span 7; } }
+  .faq details { border-top: 1px solid var(--ln); }
+  .faq details:last-child { border-bottom: 1px solid var(--ln); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 0; font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.2; transition: color .2s; }
+  .faq summary:hover { color: var(--red); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; flex: none; width: 36px; height: 36px; border: 1px solid var(--ln); border-radius: 50%; display: grid; place-items: center; font-family: var(--text); font-size: 20px; transition: transform .4s var(--ease), background .2s, color .2s, border-color .2s; }
+  .faq details[open] summary::after { transform: rotate(135deg); background: var(--red); border-color: var(--red); color: #FFF; }
+  .faq p { padding: 0 48px 28px 0; max-width: 56ch; color: var(--mut); }
+  @media (prefers-reduced-motion: no-preference) { .faq details[open] p { animation: fadeUp .5s var(--ease); } }
+
+  /* Contact: warm bokeh lights drifting, like her bar shots */
+  .contact { overflow: hidden; }
+  .bokeh { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .bokeh i { position: absolute; border-radius: 50%; background: radial-gradient(circle, var(--c) 0%, transparent 68%); opacity: .45; filter: blur(2px); }
+  .bokeh i:nth-child(1) { --c: #E7A04B; width: 220px; height: 220px; left: 6%; top: 12%; }
+  .bokeh i:nth-child(2) { --c: #C4161C; width: 340px; height: 340px; left: 62%; top: 4%; }
+  .bokeh i:nth-child(3) { --c: #F2C46A; width: 140px; height: 140px; left: 40%; top: 58%; }
+  .bokeh i:nth-child(4) { --c: #E7A04B; width: 260px; height: 260px; left: 82%; top: 62%; }
+  .bokeh i:nth-child(5) { --c: #D9533A; width: 180px; height: 180px; left: 18%; top: 74%; }
+  .bokeh i:nth-child(6) { --c: #F2C46A; width: 90px; height: 90px; left: 54%; top: 28%; }
+  @media (prefers-reduced-motion: no-preference) {
+    .bokeh i { animation: float 18s ease-in-out infinite alternate; }
+    .bokeh i:nth-child(2n) { animation-duration: 24s; animation-direction: alternate-reverse; }
+    .bokeh i:nth-child(3n) { animation-duration: 30s; }
+  }
+  @keyframes float { to { transform: translate(60px, -50px) scale(1.15); } }
+  .contact .container { position: relative; z-index: 1; }
+  .contact-title { font-family: var(--serif); font-weight: 300; font-size: clamp(64px, 14vw, 260px); line-height: .85; letter-spacing: -.045em; margin-bottom: 64px; }
+  .contact-in { row-gap: 48px; }
+  .contact-side { grid-column: 1 / -1; }
+  .contact-side p + p { margin-top: 16px; }
+  .form { grid-column: 1 / -1; display: grid; gap: 32px; }
+  .two { display: grid; gap: 32px; }
+  .field { display: grid; gap: 6px; border: 0; }
+  .field label, .field legend { font-size: 14px; font-weight: 500; color: var(--mut); }
+  .field legend { margin-bottom: 12px; }
+  .field input, .field textarea { font: inherit; color: var(--fg); background: transparent; border: 0; border-bottom: 1px solid var(--ln); border-radius: 0; padding: 8px 0 14px; width: 100%; transition: border-color .3s; }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--fg); }
+  .field textarea { resize: vertical; min-height: 96px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips label { position: relative; }
+  .chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .chips span { display: inline-block; padding: 10px 18px; border: 1px solid var(--ln); border-radius: 999px; font-size: 15px; font-weight: 500; color: var(--fg); transition: background .3s, color .3s, border-color .3s; }
+  .chips label:hover span { border-color: var(--mut); }
+  .chips input:checked + span { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .chips input:focus-visible + span { outline: 2px solid var(--fg); outline-offset: 3px; }
+  .form .btn { justify-self: start; }
+  .form-ok { display: none; font-family: var(--serif); font-size: 40px; line-height: 1.15; }
+  .form.sent > *:not(.form-ok) { display: none; }
+  .form.sent .form-ok { display: block; }
+  @media (prefers-reduced-motion: no-preference) { .form.sent .form-ok { animation: fadeUp .8s var(--ease); } }
+  @media (min-width: 900px) {
+    .contact-title { margin-bottom: 96px; }
+    .contact-side { grid-column: 1 / span 4; }
+    .form { grid-column: 6 / span 7; }
+    .two { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+
+  /* Footer */
+  .footer { background: var(--wine); color: #C4ABA5; padding: 0 0 112px; font-size: 14px; overflow: hidden; }
+  .footer .container { border-top: 1px solid #5A3436; }
+  .footer .big { font-family: var(--sign); line-height: 1; color: #F7EEEA; font-size: 14vw; white-space: nowrap; text-align: center; padding: 48px 0 0; }
+  .footer-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 24px; }
+  .footer a:hover { color: #F7EEEA; }
+  @media (min-width: 900px) { .footer { padding-bottom: 40px; } .footer .big { font-size: min(12vw, 220px); } }
+
+  .sticky { position: fixed; left: var(--gutter); right: var(--gutter); bottom: 16px; z-index: 30; box-shadow: 0 12px 30px -10px rgba(120, 10, 14, .55); transition: opacity .3s, transform .3s var(--ease); }
+  .sticky.off { opacity: 0; transform: translateY(16px); pointer-events: none; }
+  @media (min-width: 900px) { .sticky { display: none; } }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="intro" aria-hidden="true"><span class="intro-sign">Anna Maksymiv</span></div>
+
+<header class="header">
+  <div class="container header-in">
+    <a href="#top" class="logo" aria-label="Anna Maksymiv, home">Anna Maksymiv</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#prices" data-i18n="nav.prices">Prices</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="uk" aria-pressed="false">UA</button>
+      </div>
+      <a href="#contact" class="btn btn-primary" data-i18n="cta.book">Book a shoot</a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu" data-i18n="nav.menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <nav aria-label="Mobile">
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#work" data-i18n="nav.work">Work</a>
+    <a href="#prices" data-i18n="nav.prices">Prices</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+  </nav>
+  <a href="#contact" class="btn btn-primary" data-i18n="cta.dates">Check my dates</a>
+</div>
+
+<main id="top">
+
+  <section class="hero" data-theme="light">
+    <div class="container">
+      <div class="hero-art" aria-hidden="true">
+        <span class="hero-fig"><span class="ph"><img src="img/hero-bw.jpg" alt="" fetchpriority="high" width="430" height="646"></span></span>
+        <span class="wrap wrap1"><span class="w w1" data-i18n="hero.w1">Photo</span></span>
+        <span class="wrap wrap2"><span class="w w2" data-i18n="hero.w2">graphy</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about" data-theme="blush">
+    <div class="container grid12">
+      <div class="about-text">
+        <h2 class="h2" data-i18n="about.title" data-reveal="up">Hi, I'm <span class="name">Anna</span></h2>
+        <p data-i18n="about.p1" data-reveal="fade">I'm a photographer based in Northampton. I shoot families, couples and local brands, and I love warm light, real emotion and a little bit of red in the frame</p>
+        <p data-i18n="about.p2" data-reveal="fade" style="--d:.1s">On a shoot I talk a lot and keep things simple. In ten minutes you forget about the camera, and that is when the best photos happen</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tag" data-theme="blush">
+    <div class="container tag-in grid12">
+      <h1 class="sr" data-i18n="hero.h1">Family, couple and brand photographer in Northampton</h1>
+      <p class="tag-line" aria-hidden="true" data-reveal="up">
+        <span data-i18n="tag.1">Photographer for</span>
+        <span><span class="reel"><span class="on" data-i18n="tag.f">families</span><span data-i18n="tag.c">couples</span><span data-i18n="tag.b">brands</span></span></span>
+        <span data-i18n="tag.3">in Northampton</span>
+      </p>
+      <div class="tag-ph" aria-hidden="true" data-reveal="fade" style="--d:.15s">
+        <img class="on" src="img/work-08.jpg" alt="" loading="lazy"><img src="img/work-10.jpg" alt="" loading="lazy"><img src="img/work-07.jpg" alt="" loading="lazy">
+      </div>
+      <div class="tag-foot" data-reveal="fade" style="--d:.1s">
+        <p data-i18n="hero.lead">Natural light, easy direction and photos you will want to print and keep</p>
+        <div class="tag-actions">
+          <a href="#work" class="link" data-i18n="cta.work">See my work</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="cta.dates">Check my dates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" data-theme="red">
+    <div class="container band-in grid12">
+      <div class="band-copy">
+        <h2 class="band-title" data-i18n="band.title" data-reveal="up">No stiff poses</h2>
+        <p data-i18n="band.text" data-reveal="fade">Kids can run, dogs can bark and you can laugh at my jokes. I catch what happens in between, and that is what ends up on your wall</p>
+      </div>
+      <div class="stack-wrap" data-reveal="fade" style="--d:.15s">
+        <button type="button" class="stack" aria-label="Show the next photo">
+          <img src="img/work-08.jpg" alt="Woman running across an autumn park" data-pos="0" loading="lazy" width="1280" height="1600">
+          <img src="img/work-06.jpg" alt="Bride holding her bouquet by the window" data-pos="1" loading="lazy" width="1170" height="1462">
+          <img src="img/work-04.jpg" alt="Autumn portrait in a park" data-pos="2" loading="lazy" width="1280" height="1600">
+        </button>
+        <span class="stack-hint" data-i18n="band.hint">Tap the photos to flip through</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services" data-theme="light">
+    <div class="container">
+      <div class="sec-head grid12">
+        <h2 class="h2" data-i18n="paths.title" data-reveal="up">Who I shoot for</h2>
+        <p class="side muted" data-i18n="paths.side" data-reveal="fade">Two kinds of shoots, one approach: real moments, warm light and no awkward posing</p>
+      </div>
+      <div class="svc-group">
+        <h3 class="svc-label" data-i18n="svc.personal">Personal shoots</h3>
+        <div class="cards">
+          <a class="card" href="#work" data-go="all" data-reveal="clip"><span class="ph"><img src="img/work-04.jpg" alt="" loading="lazy"></span><span><span class="card-t" data-i18n="svc.f">Families and kids</span><span class="card-n" data-i18n="svc.f.n">Walks in the park, mornings at home, christenings</span><span class="card-go" data-i18n="svc.go">See photos</span></span></a>
+          <a class="card" href="#work" data-go="couple" data-reveal="clip" style="--d:.1s"><span class="ph"><img src="img/work-10.jpg" alt="" loading="lazy"></span><span><span class="card-t" data-i18n="svc.c">Couples and weddings</span><span class="card-n" data-i18n="svc.c.n">Love stories, small weddings, anniversaries</span><span class="card-go" data-i18n="svc.go">See photos</span></span></a>
+          <a class="card" href="#work" data-go="portrait" data-reveal="clip" style="--d:.2s"><span class="ph"><img src="img/path-people.jpg" alt="" loading="lazy"></span><span><span class="card-t" data-i18n="svc.p">Portraits</span><span class="card-n" data-i18n="svc.p.n">For you, as a gift, for your profile</span><span class="card-go" data-i18n="svc.go">See photos</span></span></a>
+        </div>
+      </div>
+      <div class="svc-group">
+        <h3 class="svc-label" data-i18n="svc.business">For business</h3>
+        <div class="cards biz">
+          <a class="card" href="#work" data-go="brand" data-reveal="clip"><span class="ph"><img src="img/work-07.jpg" alt="" loading="lazy"></span><span><span class="card-t" data-i18n="svc.b">Brands and sport</span><span class="card-n" data-i18n="svc.b.n">Clubs, studios and local businesses</span><span class="card-go" data-i18n="svc.go">See photos</span></span></a>
+          <a class="card" href="#work" data-go="food" data-reveal="clip" style="--d:.1s"><span class="ph"><img src="img/work-03.jpg" alt="" loading="lazy" style="object-position:50% 70%"></span><span><span class="card-t" data-i18n="svc.d">Food and drinks</span><span class="card-n" data-i18n="svc.d.n">Cafés, bars, bakeries and menus</span><span class="card-go" data-i18n="svc.go">See photos</span></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" data-theme="work">
+    <div class="container">
+      <div class="sec-head grid12">
+        <h2 class="h2" data-i18n="work.title" data-reveal="up">Selected work</h2>
+        <p class="side muted" data-i18n="work.side" data-reveal="fade">Recent shoots in Northampton and across the UK. More on Instagram</p>
+      </div>
+      <div class="tabs" role="group" aria-label="Filter">
+        <button type="button" data-filter="all" aria-pressed="true"><span data-i18n="work.all">All</span><sup>10</sup></button>
+        <button type="button" data-filter="couple" aria-pressed="false"><span data-i18n="work.couple">Weddings</span><sup>3</sup></button>
+        <button type="button" data-filter="portrait" aria-pressed="false"><span data-i18n="work.portrait">Portraits</span><sup>2</sup></button>
+        <button type="button" data-filter="brand" aria-pressed="false"><span data-i18n="work.brand">Brands</span><sup>2</sup></button>
+        <button type="button" data-filter="food" aria-pressed="false"><span data-i18n="work.food">Food &amp; drinks</span><sup>3</sup></button>
+      </div>
+      <!-- To add photos: copy a tile, change the image, alt text, data-cat and caption. Only the first 7 show until "Show all" is pressed -->
+      <div class="gallery-wrap"><div class="gallery">
+        <button type="button" class="tile wide" data-cat="brand" data-reveal="clip"><span class="zoom"><img src="img/work-01.jpg" alt="Padel ball on a red court, Haiduk's Padel" loading="lazy" width="2400" height="1600"></span><span class="cap" data-i18n="work.brand">Brands</span></button>
+        <button type="button" class="tile" data-cat="couple" data-reveal="clip" style="--d:.1s"><span class="zoom"><img src="img/work-02.jpg" alt="Bride and groom's hands with rings over a bouquet" loading="lazy" width="1280" height="1600"></span><span class="cap" data-i18n="work.couple">Weddings</span></button>
+        <button type="button" class="tile" data-cat="food" data-reveal="clip"><span class="zoom"><img src="img/work-03.jpg" alt="Two cocktails with strawberries and lime" loading="lazy" width="1280" height="1600"></span><span class="cap" data-i18n="work.food">Food &amp; drinks</span></button>
+        <button type="button" class="tile" data-cat="portrait" data-reveal="clip" style="--d:.1s"><span class="zoom"><img src="img/work-04.jpg" alt="Autumn portrait in a park" loading="lazy" width="1280" height="1600"></span><span class="cap" data-i18n="work.portrait">Portraits</span></button>
+        <button type="button" class="tile" data-cat="food" data-reveal="clip" style="--d:.2s"><span class="zoom"><img src="img/work-05.jpg" alt="Cocktail on a wooden bar" loading="lazy" width="1280" height="1600"></span><span class="cap" data-i18n="work.food">Food &amp; drinks</span></button>
+        <button type="button" class="tile" data-cat="couple" data-reveal="clip"><span class="zoom"><img src="img/work-06.jpg" alt="Bride holding her bouquet by the window" loading="lazy" width="1170" height="1462"></span><span class="cap" data-i18n="work.couple">Weddings</span></button>
+        <button type="button" class="tile wide" data-cat="brand" data-reveal="clip" style="--d:.1s"><span class="zoom"><img src="img/work-07.jpg" alt="Founders of Haiduk's Padel on their court" loading="lazy" width="2400" height="1600"></span><span class="cap" data-i18n="work.brand">Brands</span></button>
+        <button type="button" class="tile" data-cat="portrait" data-reveal="clip"><span class="zoom"><img src="img/work-08.jpg" alt="Woman walking through an autumn park" loading="lazy" width="1280" height="1600"></span><span class="cap" data-i18n="work.portrait">Portraits</span></button>
+        <button type="button" class="tile" data-cat="food" data-reveal="clip" style="--d:.1s"><span class="zoom"><img src="img/work-09.jpg" alt="Creamy cocktail with orange and pineapple" loading="lazy" width="1280" height="1600"></span><span class="cap" data-i18n="work.food">Food &amp; drinks</span></button>
+        <button type="button" class="tile" data-cat="couple" data-reveal="clip" style="--d:.2s"><span class="zoom"><img src="img/work-10.jpg" alt="Newlyweds with their bouquet" loading="lazy" width="1170" height="1462"></span><span class="cap" data-i18n="work.couple">Weddings</span></button>
+      </div></div>
+      <div class="work-more">
+        <button type="button" class="btn btn-primary show-all"><span data-i18n="work.showall">Show all work</span> <span class="count"></span></button>
+        <a class="btn btn-ghost" href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener" data-i18n="work.insta">More on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-theme="blush">
+    <div class="container">
+      <div class="edit grid12">
+        <div class="edit-text">
+          <h2 class="h2" data-i18n="edit.title" data-reveal="up">Every frame edited by hand</h2>
+          <p class="muted" data-i18n="edit.text" data-reveal="fade">I spend as much time on your photos after the shoot as during it. Drag the line to see the difference</p>
+          <ul class="edit-list" data-reveal="fade" style="--d:.1s">
+            <li data-i18n="edit.l1">Warm, natural colour</li>
+            <li data-i18n="edit.l2">Soft, true-to-life skin</li>
+            <li data-i18n="edit.l3">Small distractions cleaned up</li>
+          </ul>
+        </div>
+        <div class="edit-view" data-reveal="fade" style="--d:.1s">
+          <div class="ba">
+            <img class="after" src="img/work-01.jpg" alt="Example photo after editing" loading="lazy">
+            <img class="before" src="img/work-01.jpg" alt="" loading="lazy">
+            <span class="ba-line"><span class="ba-knob"><i>‹</i><span data-i18n="edit.drag">Drag</span><i>›</i></span></span>
+            <span class="ba-tag l" data-i18n="edit.before">Before</span>
+            <span class="ba-tag r" data-i18n="edit.after">After</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+          </div>
+          <!-- PLACEHOLDER pairs: point data-before at real RAW files when Anna sends them -->
+          <div class="ba-thumbs" role="group" aria-label="Examples">
+            <button type="button" aria-pressed="true" data-after="img/work-01.jpg" data-before="img/work-01.jpg"><img src="img/work-01.jpg" alt="Padel" loading="lazy"></button>
+            <button type="button" aria-pressed="false" data-after="img/work-05.jpg" data-before="img/work-05.jpg"><img src="img/work-05.jpg" alt="Cocktail" loading="lazy"></button>
+            <button type="button" aria-pressed="false" data-after="img/path-people.jpg" data-before="img/path-people.jpg"><img src="img/path-people.jpg" alt="Portrait" loading="lazy"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="prices" data-theme="light">
+    <div class="container">
+      <div class="sec-head grid12">
+        <h2 class="h2" data-i18n="prices.title" data-reveal="up">Prices</h2>
+        <p class="side muted" data-i18n="prices.note" data-reveal="fade">The final price depends on the location and details. Message me and I will put together an offer for you</p>
+      </div>
+      <div class="switch" role="group" aria-label="Prices for">
+        <button type="button" data-plans="people" aria-pressed="true" data-i18n="prices.people">Personal shoots</button>
+        <button type="button" data-plans="brands" aria-pressed="false" data-i18n="prices.brands">For business</button>
+      </div>
+
+      <div class="plans grid12" id="plans-people">
+        <div class="plan">
+          <div class="plan-ph"><img src="img/work-04.jpg" alt="" loading="lazy" style="object-position:50% 30%"></div>
+          <div class="plan-body">
+            <div class="plan-top"><h3>Mini</h3><div class="price"><small data-i18n="from">from</small>£120</div></div>
+            <p class="sub" data-i18n="pp.1s">A quick portrait or a gift</p>
+            <ul>
+              <li data-i18n="pp.1a">30 minutes, one location</li>
+              <li data-i18n="pp.1b">15 edited photos</li>
+              <li data-i18n="pp.1c">Online gallery</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-i18n="cta.choose">Choose Mini</a>
+          </div>
+        </div>
+        <div class="plan featured">
+          <span class="badge" data-i18n="pp.badge">Most popular</span>
+          <div class="plan-ph"><img src="img/work-08.jpg" alt="" loading="lazy" style="object-position:50% 60%"></div>
+          <div class="plan-body">
+            <div class="plan-top"><h3>Classic</h3><div class="price"><small data-i18n="from">from</small>£200</div></div>
+            <p class="sub" data-i18n="pp.2s">Most families pick this one</p>
+            <ul>
+              <li data-i18n="pp.2a">1 hour, up to two locations</li>
+              <li data-i18n="pp.2b">40 edited photos</li>
+              <li data-i18n="pp.2c">Outfit and location guide</li>
+              <li data-i18n="pp.2d">Online gallery</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" data-i18n="cta.book">Book a shoot</a>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="plan-ph"><img src="img/work-02.jpg" alt="" loading="lazy" style="object-position:50% 70%"></div>
+          <div class="plan-body">
+            <div class="plan-top"><h3>Story</h3><div class="price"><small data-i18n="from">from</small>£320</div></div>
+            <p class="sub" data-i18n="pp.3s">A christening, a milestone, a small wedding</p>
+            <ul>
+              <li data-i18n="pp.3a">2 hours</li>
+              <li data-i18n="pp.3b">80+ edited photos</li>
+              <li data-i18n="pp.3c">Photobook option</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-i18n="cta.ask">Ask about a date</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="plans grid12" id="plans-brands" hidden>
+        <div class="plan">
+          <div class="plan-ph"><img src="img/work-01.jpg" alt="" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-top"><h3 data-i18n="pb.1">Product</h3><div class="price"><small data-i18n="from">from</small>£150</div></div>
+            <p class="sub" data-i18n="pb.1s">Clean shots for your shop</p>
+            <ul>
+              <li data-i18n="pb.1a">Up to 10 products</li>
+              <li data-i18n="pb.1b">Plain and styled backgrounds</li>
+              <li data-i18n="pb.1c">Web and print sizes</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-i18n="cta.quote">Get a quote</a>
+          </div>
+        </div>
+        <div class="plan featured">
+          <span class="badge" data-i18n="pp.badge">Most popular</span>
+          <div class="plan-ph"><img src="img/work-03.jpg" alt="" loading="lazy" style="object-position:50% 65%"></div>
+          <div class="plan-body">
+            <div class="plan-top"><h3 data-i18n="pb.2">Food &amp; drinks</h3><div class="price"><small data-i18n="from">from</small>£250</div></div>
+            <p class="sub" data-i18n="pb.2s">Menu, website and socials</p>
+            <ul>
+              <li data-i18n="pb.2a">2 hours at your place</li>
+              <li data-i18n="pb.2b">Dishes, drinks and interior</li>
+              <li data-i18n="pb.2c">30+ edited photos</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" data-i18n="cta.quote">Get a quote</a>
+          </div>
+        </div>
+        <div class="plan">
+          <div class="plan-ph"><img src="img/work-07.jpg" alt="" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-top"><h3 data-i18n="pb.3">Content day</h3><div class="price"><small data-i18n="from">from</small>£450</div></div>
+            <p class="sub" data-i18n="pb.3s">A month of content in one go</p>
+            <ul>
+              <li data-i18n="pb.3a">Half a day</li>
+              <li data-i18n="pb.3b">Photo and short video clips</li>
+              <li data-i18n="pb.3c">Behind the scenes and team</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-i18n="cta.quote">Get a quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews" data-theme="blush">
+    <div class="container">
+      <div class="sec-head grid12">
+        <h2 class="h2" data-i18n="reviews.title" data-reveal="up">Kind words</h2>
+        <p class="side muted" data-i18n="reviews.side" data-reveal="fade">Messages clients sent me after they got their photos</p>
+      </div>
+      <div class="chat grid12">
+        <figure class="msg" data-reveal="pop">
+          <blockquote class="bubble" data-i18n="reviews.r1">An incredible photographer who can pass on emotion, atmosphere and feeling through a photo. We are so happy fate brought us to Anya, because now we have wonderful photos of our most important day</blockquote>
+          <figcaption data-i18n="reviews.t1">Christening, family shoot</figcaption>
+        </figure>
+        <figure class="msg" data-reveal="pop" style="--d:.15s">
+          <blockquote class="bubble" data-i18n="reviews.r2">The photos are unreal. I look at them and squeal at how beautiful they are. It was great during the shoot, and the result is simply amazing. I saw myself from a different side</blockquote>
+          <figcaption data-i18n="reviews.t2">Sisters, outdoor shoot</figcaption>
+        </figure>
+        <figure class="msg" data-reveal="pop" style="--d:.3s">
+          <blockquote class="bubble" data-i18n="reviews.r3">The photos are just wonderful and the quality is beautiful. I can't take my eyes off them</blockquote>
+          <figcaption data-i18n="reviews.t3">Portrait session</figcaption>
+        </figure>
+        <p class="chat-more" data-reveal="fade"><a class="link" href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener" data-i18n="reviews.more">More reviews in my Instagram highlights</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" data-theme="light">
+    <div class="container">
+      <div class="faq-wrap grid12">
+        <h2 class="h2 faq-title" data-i18n="faq.title" data-reveal="up">Good questions</h2>
+        <div class="faq" data-reveal="fade">
+          <details><summary data-i18n="faq.q1">What should we wear?</summary><p data-i18n="faq.a1">Calm colours that go together, without big logos. After booking I send you a short guide with outfit ideas</p></details>
+          <details><summary data-i18n="faq.q2">What if it rains?</summary><p data-i18n="faq.a2">We move the shoot to another day for free, or find a cosy place indoors</p></details>
+          <details><summary data-i18n="faq.q3">My kids won't sit still. Is that a problem?</summary><p data-i18n="faq.a3">Not at all. They don't have to. I work with games and movement, and the most honest photos come from that</p></details>
+          <details><summary data-i18n="faq.q4">How do I book a date?</summary><p data-i18n="faq.a4">Send a message through the form or Instagram. A deposit holds the date, the rest you pay on the day of the shoot</p></details>
+          <details><summary data-i18n="faq.q5">Can I order a photobook?</summary><p data-i18n="faq.a5">Yes. I design a photobook with your photos and order the print, so you can keep it or gift it</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" data-theme="dark">
+    <div class="bokeh" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="container">
+      <h2 class="contact-title" data-i18n="contact.title" data-reveal="up">Let's talk</h2>
+      <div class="contact-in grid12">
+        <div class="contact-side" data-reveal="fade">
+          <p data-i18n="contact.text">Tell me a little about you and the shoot you have in mind. I reply within a day</p>
+          <p class="muted" data-i18n="contact.dm">Prefer Instagram? <a class="link" href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Send me a DM</a></p>
+        </div>
+        <form class="form" name="contact" method="POST" data-netlify="true" data-reveal="fade" style="--d:.1s">
+          <input type="hidden" name="form-name" value="contact">
+          <fieldset class="field">
+            <legend data-i18n="f.type">Type of shoot</legend>
+            <div class="chips">
+              <label><input type="radio" name="type" value="Family" checked><span data-i18n="f.t1">Family</span></label>
+              <label><input type="radio" name="type" value="Couple"><span data-i18n="f.t2">Couple</span></label>
+              <label><input type="radio" name="type" value="Portrait"><span data-i18n="f.t3">Portrait</span></label>
+              <label><input type="radio" name="type" value="Wedding or christening"><span data-i18n="f.t4">Wedding or christening</span></label>
+              <label><input type="radio" name="type" value="Business"><span data-i18n="f.t5">Business</span></label>
+            </div>
+          </fieldset>
+          <div class="two">
+            <div class="field"><label for="f-name" data-i18n="f.name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-email" data-i18n="f.email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="field"><label for="f-date" data-i18n="f.date">Preferred date</label><input id="f-date" name="date" type="date"></div>
+          <div class="field"><label for="f-msg" data-i18n="f.msg">A few words about the shoot</label><textarea id="f-msg" name="message"></textarea></div>
+          <button type="submit" class="btn btn-primary" data-i18n="f.send">Send my request</button>
+          <p class="form-ok" role="status" data-i18n="f.ok">Thank you! I will reply within a day</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="big" aria-hidden="true">Anna Maksymiv</p>
+    <div class="footer-in">
+      <span>© 2026 Anna Maksymiv Photography</span>
+      <span>Northampton, UK</span>
+      <a href="https://www.instagram.com/anna_maksymiv_ph/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<a href="#contact" class="btn btn-primary sticky off" data-i18n="cta.dates">Check my dates</a>
+
+<div class="lb" hidden role="dialog" aria-modal="true" aria-label="Photo">
+  <button type="button" class="lb-close" aria-label="Close">×</button>
+  <div class="lb-stage"><img alt=""></div>
+  <div class="lb-bar">
+    <span class="lb-count"></span>
+    <div class="lb-nav">
+      <button type="button" class="lb-prev" aria-label="Previous photo">←</button>
+      <button type="button" class="lb-next" aria-label="Next photo">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const UK = {
+  "nav.about": "Про мене", "nav.services": "Послуги", "nav.work": "Роботи", "nav.prices": "Ціни", "nav.faq": "Питання", "nav.menu": "Меню",
+  "cta.book": "Забронювати зйомку", "cta.work": "Дивитися роботи", "cta.dates": "Перевірити дати",
+  "cta.choose": "Обрати Mini", "cta.ask": "Запитати про дату", "cta.quote": "Отримати пропозицію",
+  "hero.w1": "Фото", "hero.w2": "графія",
+  "tag.1": "Фотографиня для", "tag.f": "сімей", "tag.c": "пар", "tag.b": "брендів", "tag.3": "у Нортгемптоні",
+  "hero.h1": "Сімейна, парна та брендова фотографиня в Нортгемптоні",
+  "hero.lead": "Природне світло, легкі підказки і фото, які захочеться надрукувати й зберегти",
+  "about.title": "Привіт, я <span class=\"name\">Анна</span>",
+  "about.p1": "Я фотографиня з Нортгемптона. Знімаю сім'ї, пари та локальні бренди, люблю тепле світло, справжні емоції й трохи червоного в кадрі",
+  "about.p2": "На зйомці я багато говорю і все спрощую. За десять хвилин ви забуваєте про камеру, і саме тоді виходять найкращі фото",
+  "band.title": "Без натягнутих поз",
+  "band.text": "Діти можуть бігати, собака гавкати, а ви сміятися з моїх жартів. Я ловлю те, що відбувається між цим, і саме це потім висить у вас на стіні",
+  "band.hint": "Натисніть на фото, щоб погортати",
+  "paths.title": "Для кого я знімаю",
+  "paths.side": "Два види зйомок, один підхід: справжні моменти, тепле світло і жодних незграбних поз",
+  "svc.personal": "Особисті зйомки", "svc.business": "Для бізнесу", "svc.go": "Дивитися фото",
+  "svc.f": "Сім'ї та діти", "svc.f.n": "Прогулянки в парку, ранок удома, хрестини",
+  "svc.c": "Пари та весілля", "svc.c.n": "Love story, невеликі весілля, річниці",
+  "svc.p": "Портрети", "svc.p.n": "Для себе, на подарунок, для профілю",
+  "svc.b": "Бренди та спорт", "svc.b.n": "Клуби, студії та локальний бізнес",
+  "svc.d": "Їжа та напої", "svc.d.n": "Кав'ярні, бари, пекарні та меню",
+  "work.title": "Вибрані роботи", "work.side": "Свіжі зйомки в Нортгемптоні та по всій Британії. Більше в Instagram",
+  "work.all": "Усі", "work.couple": "Весілля", "work.portrait": "Портрети", "work.brand": "Бренди", "work.food": "Їжа та напої",
+  "work.showall": "Показати всі роботи", "work.insta": "Більше в Instagram",
+  "edit.title": "Кожен кадр обробляю вручну",
+  "edit.text": "Над вашими фото я працюю після зйомки не менше, ніж під час неї. Потягніть лінію, щоб побачити різницю",
+  "edit.l1": "Теплий, природний колір", "edit.l2": "М'яка, жива шкіра", "edit.l3": "Прибрані дрібні відволікання",
+  "edit.before": "До", "edit.after": "Після", "edit.drag": "Тягніть",
+  "prices.title": "Ціни", "prices.people": "Особисті зйомки", "prices.brands": "Для бізнесу", "from": "від",
+  "prices.note": "Остаточна ціна залежить від локації та деталей. Напишіть мені, і я складу пропозицію саме для вас",
+  "pp.badge": "Найпопулярніший",
+  "pp.1s": "Швидкий портрет або подарунок", "pp.1a": "30 хвилин, одна локація", "pp.1b": "15 оброблених фото", "pp.1c": "Онлайн-галерея",
+  "pp.2s": "Найчастіше обирають сім'ї", "pp.2a": "1 година, до двох локацій", "pp.2b": "40 оброблених фото", "pp.2c": "Підказки щодо одягу й локації", "pp.2d": "Онлайн-галерея",
+  "pp.3s": "Хрестини, важлива подія, невелике весілля", "pp.3a": "2 години", "pp.3b": "80+ оброблених фото", "pp.3c": "Можна з фотокнигою",
+  "pb.1": "Продукт", "pb.1s": "Чисті кадри для магазину", "pb.1a": "До 10 товарів", "pb.1b": "Однотонний і стилізований фон", "pb.1c": "Розміри для вебу і друку",
+  "pb.2": "Їжа та напої", "pb.2s": "Меню, сайт і соцмережі", "pb.2a": "2 години у вашому закладі", "pb.2b": "Страви, напої та інтер'єр", "pb.2c": "30+ оброблених фото",
+  "pb.3": "Контент-день", "pb.3s": "Контент на місяць за один раз", "pb.3a": "Пів дня", "pb.3b": "Фото і короткі відео", "pb.3c": "Закулісся і команда",
+  "reviews.title": "Теплі слова", "reviews.side": "Повідомлення, які клієнти надіслали мені, коли отримали свої фото",
+  "reviews.more": "Більше відгуків у хайлайтах Instagram",
+  "reviews.r1": "Неймовірний фотограф, який уміє передати емоції, атмосферу та відчуття через фото. Щасливі, що доля звела нас з Анею, бо тепер у нас є неперевершені фото з нашого найважливішого дня",
+  "reviews.t1": "Хрестини, сімейна зйомка",
+  "reviews.r2": "Фотки нереальні, дивлюся на них і пищу від краси. Було дуже класно і в процесі, а результат просто бомбічний. Я побачила себе з іншого боку",
+  "reviews.t2": "Сестри, зйомка на природі",
+  "reviews.r3": "Фотографії просто чудові, якість прекрасна, не можу відірвати від них погляд",
+  "reviews.t3": "Портретна зйомка",
+  "faq.title": "Хороші питання",
+  "faq.q1": "Що вдягнути?", "faq.a1": "Спокійні кольори, які пасують між собою, без великих логотипів. Після бронювання я надішлю коротку інструкцію з ідеями",
+  "faq.q2": "А якщо піде дощ?", "faq.a2": "Безкоштовно перенесемо зйомку на інший день або знайдемо затишне місце в приміщенні",
+  "faq.q3": "Мої діти не всидять на місці. Це проблема?", "faq.a3": "Зовсім ні, їм і не треба. Я працюю через ігри та рух, і саме так виходять найщиріші фото",
+  "faq.q4": "Як забронювати дату?", "faq.a4": "Напишіть через форму або в Instagram. Передоплата закріплює дату, решту ви сплачуєте в день зйомки",
+  "faq.q5": "Можна замовити фотокнигу?", "faq.a5": "Так. Я роблю дизайн фотокниги з вашими фото й замовляю друк, щоб ви могли зберегти її або подарувати",
+  "contact.title": "Поговорімо",
+  "contact.text": "Розкажіть трохи про себе і зйомку, яку уявляєте. Я відповідаю протягом дня",
+  "contact.dm": "Зручніше в Instagram? <a class=\"link\" href=\"https://www.instagram.com/anna_maksymiv_ph/\" target=\"_blank\" rel=\"noopener\">Напишіть мені в директ</a>",
+  "f.name": "Ваше ім'я", "f.email": "Email", "f.type": "Тип зйомки", "f.date": "Бажана дата", "f.msg": "Кілька слів про зйомку", "f.send": "Надіслати запит",
+  "f.t1": "Сімейна", "f.t2": "Парна", "f.t3": "Портрет", "f.t4": "Весілля або хрестини", "f.t5": "Для бізнесу",
+  "f.ok": "Дякую! Я відповім протягом дня"
+};
+
+const root = document.documentElement;
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const vt = !reduce && typeof document.startViewTransition === "function";
+
+// Intro lifts by itself, or on click
+if (root.classList.contains("intro")) {
+  const end = () => root.classList.remove("intro");
+  setTimeout(end, 2800);
+  document.querySelector(".intro").addEventListener("click", end);
+}
+
+// Language
+const nodes = document.querySelectorAll("[data-i18n]");
+nodes.forEach(n => { n.dataset.en = n.innerHTML; });
+function setLang(l) {
+  nodes.forEach(n => {
+    const v = l === "uk" ? UK[n.dataset.i18n] : n.dataset.en;
+    if (v !== undefined) n.innerHTML = v;
+  });
+  root.lang = l;
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === l)));
+  try { localStorage.setItem("lang", l); } catch (e) {}
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+let saved = new URLSearchParams(location.search).get("lang");
+if (!saved) { try { saved = localStorage.getItem("lang"); } catch (e) {} }
+if (saved === "uk") setLang("uk");
+
+// Tagline reel: families, couples, brands, with the matching photo
+const reel = [...document.querySelectorAll(".reel > span")];
+const tagPh = [...document.querySelectorAll(".tag-ph img")];
+if (!reduce) {
+  let r = 0;
+  setInterval(() => {
+    if (document.hidden) return;
+    const prev = r; r = (r + 1) % reel.length;
+    reel[prev].classList.replace("on", "out");
+    reel[r].classList.add("on");
+    setTimeout(() => { const el = reel[prev]; el.style.transition = "none"; el.classList.remove("out"); void el.offsetWidth; el.style.transition = ""; }, 850);
+    tagPh.forEach((im, i) => im.classList.toggle("on", i === r));
+  }, 2600);
+}
+
+// Page colour follows the section in the middle of the screen
+const themeIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) document.body.dataset.theme = e.target.dataset.theme; });
+}, { rootMargin: "-50% 0px -50% 0px" });
+document.querySelectorAll("main > section[data-theme]").forEach(s => themeIO.observe(s));
+
+// Reveal on scroll
+const revealIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); revealIO.unobserve(e.target); } });
+}, { threshold: .15, rootMargin: "0px 0px -5% 0px" });
+document.querySelectorAll("[data-reveal]").forEach(el => revealIO.observe(el));
+
+// Header hides on the way down, returns on the way up
+const header = document.querySelector(".header");
+const menu = document.getElementById("menu");
+let lastY = scrollY;
+addEventListener("scroll", () => {
+  const y = scrollY;
+  header.classList.toggle("hide", y > lastY && y > 400 && !menu.classList.contains("open"));
+  lastY = y;
+}, { passive: true });
+
+// Mobile menu
+const menuBtn = document.querySelector(".menu-btn");
+function toggleMenu(open) {
+  menu.classList.toggle("open", open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+  const uk = root.lang === "uk";
+  menuBtn.textContent = open ? (uk ? "Закрити" : "Close") : (uk ? UK["nav.menu"] : "Menu");
+  document.body.style.overflow = open ? "hidden" : "";
+}
+menuBtn.addEventListener("click", () => toggleMenu(!menu.classList.contains("open")));
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => toggleMenu(false)));
+document.addEventListener("keydown", e => { if (e.key === "Escape" && menu.classList.contains("open")) toggleMenu(false); });
+
+// Stack of prints: tap to send the top one to the back
+const stack = document.querySelector(".stack");
+const prints = [...stack.querySelectorAll("img")];
+let busy = false;
+stack.addEventListener("click", () => {
+  if (busy) return;
+  const top = prints.find(p => p.dataset.pos === "0");
+  const next = () => prints.forEach(p => { p.dataset.pos = String((+p.dataset.pos + prints.length - 1) % prints.length); });
+  if (reduce) { next(); return; }
+  busy = true;
+  top.classList.add("toss");
+  setTimeout(() => { top.classList.remove("toss"); next(); busy = false; }, 380);
+});
+
+// Portfolio: filter, "show all", tiles slide to their new places, background takes the colour of the shoot
+const LIMIT = 7;
+const tiles = [...document.querySelectorAll(".gallery .tile")];
+const showAll = document.querySelector(".show-all");
+showAll.querySelector(".count").textContent = "(" + tiles.length + ")";
+let filter = "all", expanded = tiles.length <= LIMIT;
+function render() {
+  document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.filter === filter)));
+  tiles.forEach((t, i) => {
+    const off = filter === "all" ? (!expanded && i >= LIMIT) : t.dataset.cat !== filter;
+    t.classList.toggle("hide", off);
+    if (!off && t.getBoundingClientRect().top < innerHeight) t.classList.add("in");
+  });
+  showAll.hidden = filter !== "all" || expanded;
+  if (filter === "all") delete document.body.dataset.tint; else document.body.dataset.tint = filter;
+}
+function update(fn, animate = true) {
+  if (vt && animate) {
+    tiles.forEach((t, i) => { t.style.viewTransitionName = "tile-" + i; });
+    document.startViewTransition(() => { fn(); render(); }).finished.finally(() => tiles.forEach(t => { t.style.viewTransitionName = ""; }));
+  } else { fn(); render(); }
+}
+render();
+document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => update(() => { filter = b.dataset.filter; })));
+showAll.addEventListener("click", () => update(() => { expanded = true; }));
+document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", () => update(() => { filter = a.dataset.go; }, false)));
+
+// Lightbox: the photo grows out of its tile
+const lb = document.querySelector(".lb");
+const lbImg = lb.querySelector(".lb-stage img");
+const lbCount = lb.querySelector(".lb-count");
+let lbList = [], lbI = 0;
+function lbSet(i, dir) {
+  lbI = (i + lbList.length) % lbList.length;
+  const src = lbList[lbI].querySelector("img");
+  lbImg.src = src.src; lbImg.alt = src.alt;
+  lbCount.textContent = (lbI + 1) + " / " + lbList.length;
+  if (dir) { lbImg.style.setProperty("--dir", dir > 0 ? "32px" : "-32px"); lbImg.classList.remove("swap"); void lbImg.offsetWidth; lbImg.classList.add("swap"); }
+}
+async function lbOpen(tile) {
+  lbList = tiles.filter(x => !x.classList.contains("hide"));
+  const img = tile.querySelector("img");
+  lbSet(lbList.indexOf(tile));
+  try { await lbImg.decode(); } catch (e) {}
+  const show = () => { lb.hidden = false; document.body.style.overflow = "hidden"; };
+  if (vt) {
+    img.style.viewTransitionName = "lb-photo";
+    document.startViewTransition(() => { img.style.viewTransitionName = ""; lbImg.style.viewTransitionName = "lb-photo"; show(); })
+      .finished.finally(() => { lbImg.style.viewTransitionName = ""; });
+  } else { lb.classList.add("fade"); show(); }
+  lb.querySelector(".lb-close").focus();
+}
+function lbClose() {
+  const back = lbList[lbI];
+  const img = back.querySelector("img");
+  const r = back.getBoundingClientRect();
+  const hide = () => { lb.hidden = true; document.body.style.overflow = ""; };
+  if (vt && r.bottom > 0 && r.top < innerHeight) {
+    lbImg.style.viewTransitionName = "lb-photo";
+    document.startViewTransition(() => { lbImg.style.viewTransitionName = ""; img.style.viewTransitionName = "lb-photo"; hide(); })
+      .finished.finally(() => { img.style.viewTransitionName = ""; });
+  } else hide();
+  lb.classList.remove("fade");
+  back.focus({ preventScroll: true });
+}
+tiles.forEach(t => {
+  t.setAttribute("aria-label", t.querySelector("img").alt);
+  t.addEventListener("click", () => lbOpen(t));
+});
+lb.querySelector(".lb-close").addEventListener("click", lbClose);
+lb.querySelector(".lb-prev").addEventListener("click", () => lbSet(lbI - 1, -1));
+lb.querySelector(".lb-next").addEventListener("click", () => lbSet(lbI + 1, 1));
+lb.addEventListener("click", e => { if (e.target.classList.contains("lb-stage")) lbClose(); });
+document.addEventListener("keydown", e => {
+  if (lb.hidden) return;
+  if (e.key === "Escape") lbClose();
+  if (e.key === "ArrowLeft") lbSet(lbI - 1, -1);
+  if (e.key === "ArrowRight") lbSet(lbI + 1, 1);
+  if (e.key === "Tab") {
+    const f = [...lb.querySelectorAll("button")];
+    const i = f.indexOf(document.activeElement);
+    e.preventDefault();
+    f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+  }
+});
+let tx0 = null;
+lb.addEventListener("touchstart", e => { tx0 = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", e => {
+  if (tx0 === null) return;
+  const dx = e.changedTouches[0].clientX - tx0;
+  if (Math.abs(dx) > 50) lbSet(lbI + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+  tx0 = null;
+});
+
+// Before / after: drag, switch examples, a little sweep the first time it shows
+const ba = document.querySelector(".ba");
+const baInput = ba.querySelector("input");
+const setP = v => ba.style.setProperty("--p", v + "%");
+baInput.addEventListener("input", () => setP(baInput.value));
+const sweep = () => {
+  if (reduce) return;
+  const t0 = performance.now();
+  (function step(t) {
+    const k = Math.min(1, (t - t0) / 1800);
+    const v = 50 + Math.sin(k * Math.PI * 2) * 22 * (1 - k);
+    setP(v); baInput.value = v;
+    if (k < 1) requestAnimationFrame(step);
+  })(t0);
+};
+new IntersectionObserver((entries, o) => { if (entries[0].isIntersecting) { o.disconnect(); sweep(); } }, { threshold: .6 }).observe(ba);
+document.querySelectorAll(".ba-thumbs button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".ba-thumbs button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  ba.classList.add("swapping");
+  setTimeout(() => {
+    ba.querySelector(".after").src = b.dataset.after;
+    ba.querySelector(".before").src = b.dataset.before;
+    ba.classList.remove("swapping");
+    setP(50); baInput.value = 50; sweep();
+  }, reduce ? 0 : 300);
+}));
+
+// Prices switch
+function showPlans(which) {
+  document.querySelectorAll(".switch button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.plans === which)));
+  document.getElementById("plans-people").hidden = which !== "people";
+  document.getElementById("plans-brands").hidden = which !== "brands";
+}
+document.querySelectorAll(".switch button").forEach(b => b.addEventListener("click", () => showPlans(b.dataset.plans)));
+
+// Form: sends to Netlify Forms when hosted there, shows a thank-you line instead of leaving the page
+const form = document.querySelector(".form");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() })
+    .catch(() => {})
+    .finally(() => form.classList.add("sent"));
+});
+
+// Sticky CTA on phones: hidden while the hero or the contact block is on screen
+const sticky = document.querySelector(".sticky");
+const seen = new Set();
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => e.isIntersecting ? seen.add(e.target) : seen.delete(e.target));
+  sticky.classList.toggle("off", seen.size > 0);
+});
+io.observe(document.querySelector(".hero"));
+io.observe(document.querySelector(".tag-actions"));
+io.observe(document.querySelector("#contact"));
+</script>
+</body>
+</html>
